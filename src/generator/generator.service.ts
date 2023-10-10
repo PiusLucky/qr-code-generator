@@ -30,22 +30,28 @@ export class GeneratorService {
   }
 
   // Function to generate a random list of movies
-  generateRandomMovies = (movies: Movie[], count: number) => {
-    const randomMovies = [];
+  // It uses Fisher-Yates shuffle to provide a better randomization of the movies.
+  generateRandomMovies(movies: Movie[], count: number) {
     const totalMovies = movies.length;
-    const usedIndexes = new Set<number>();
 
-    while (randomMovies.length < count && randomMovies.length < totalMovies) {
-      let randomIndex: number;
-
-      do {
-        randomIndex = Math.floor(Math.random() * totalMovies);
-      } while (usedIndexes.has(randomIndex));
-
-      usedIndexes.add(randomIndex);
-      randomMovies.push(movies[randomIndex]);
+    if (count >= totalMovies) {
+      return movies.slice(); // Return a copy of the original array as there are no duplicates.
     }
 
-    return randomMovies;
-  };
+    const randomMovies = [...movies];
+    let currentIndex = randomMovies.length,
+      randomIndex: number,
+      temporaryValue: Movie;
+
+    while (currentIndex !== 0 && randomMovies.length > count) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      temporaryValue = randomMovies[currentIndex];
+      randomMovies[currentIndex] = randomMovies[randomIndex];
+      randomMovies[randomIndex] = temporaryValue;
+    }
+
+    return randomMovies.slice(0, count);
+  }
 }
