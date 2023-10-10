@@ -6,6 +6,6 @@ async function bootstrap() {
   const app = await NestFactory.create(GeneratorModule);
   // Seed the database here
   await movieSeeder();
-  await app.listen(5000);
+  await app.listen(3000);
 }
 bootstrap();

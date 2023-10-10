@@ -183,7 +183,7 @@ export const moviesData = [
   },
   {
     Title: 'Game of Thrones',
-    Year: '2011–',
+    Year: '2011',
     Rated: 'TV-MA',
     Released: '17 Apr 2011',
     Runtime: '56 min',
@@ -214,7 +214,7 @@ export const moviesData = [
   },
   {
     Title: 'Vikings',
-    Year: '2013–',
+    Year: '2013',
     Rated: 'TV-14',
     Released: '03 Mar 2013',
     Runtime: '44 min',
@@ -246,7 +246,7 @@ export const moviesData = [
   },
   {
     Title: 'Gotham',
-    Year: '2014–',
+    Year: '2014',
     Rated: 'TV-14',
     Released: '01 Aug 2014',
     Runtime: '42 min',
@@ -277,7 +277,7 @@ export const moviesData = [
   },
   {
     Title: 'Power',
-    Year: '2014–',
+    Year: '2014',
     Rated: 'TV-MA',
     Released: 'N/A',
     Runtime: '50 min',
@@ -466,7 +466,7 @@ export const moviesData = [
   {
     ComingSoon: true,
     Title: 'Luke Cage',
-    Year: '2016–',
+    Year: '2016',
     Rated: 'TV-MA',
     Released: '30 Sep 2016',
     Runtime: '55 min',
