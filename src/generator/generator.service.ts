@@ -16,7 +16,7 @@ export class GeneratorService {
     const randomMoviesId = randomMovies.map((movies) => movies.id);
 
     // Create a URL with the movie data
-    const movieUrl = `${process.env.FRONTEND_API}?movies=${encodeURIComponent(
+    const movieUrl = `${process.env.FRONTEND_URL}?movies=${encodeURIComponent(
       JSON.stringify(randomMoviesId),
     )}`;
 

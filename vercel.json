@@ -1,5 +1,9 @@
 {
   "version": 2,
+  "env": {
+    "DATABASE_URL": "@db_url",
+    "FRONTEND_URL": "@fe_url"
+  },
   "builds": [
     {
       "src": "src/main.ts",
