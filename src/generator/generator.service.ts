@@ -16,9 +16,9 @@ export class GeneratorService {
     const randomMoviesId = randomMovies.map((movies) => movies.id);
 
     // Create a URL with the movie data
-    const movieUrl = `${process.env.FRONTEND_URL}/movies?ids=${encodeURIComponent(
-      JSON.stringify(randomMoviesId),
-    )}`;
+    const movieUrl = `${
+      process.env.FRONTEND_URL
+    }/movies?ids=${encodeURIComponent(JSON.stringify(randomMoviesId))}`;
 
     // Generate a QR code for the URL
     return qr.toDataURL(movieUrl);
@@ -33,9 +33,16 @@ export class GeneratorService {
   generateRandomMovies = (movies: Movie[], count: number) => {
     const randomMovies = [];
     const totalMovies = movies.length;
+    const usedIndexes = new Set<number>();
 
-    while (randomMovies.length < count) {
-      const randomIndex = Math.floor(Math.random() * totalMovies);
+    while (randomMovies.length < count && randomMovies.length < totalMovies) {
+      let randomIndex: number;
+
+      do {
+        randomIndex = Math.floor(Math.random() * totalMovies);
+      } while (usedIndexes.has(randomIndex));
+
+      usedIndexes.add(randomIndex);
       randomMovies.push(movies[randomIndex]);
     }
 
