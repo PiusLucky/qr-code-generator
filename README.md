@@ -24,3 +24,8 @@ $ yarn run  dev
 # production mode
 $ yarn run start:prod
 ```
+## Stack
+- Prisma ORM
+- PostgreSQL
+- Nestjs
+- Typescript
