@@ -3,6 +3,9 @@
 ## Description
 A simple QR code that generates 10 random movies.
 
+## Deployed link
+https://smart-qr-generator.onrender.com/
+
 ## Installation
 
 ```bash
